@@ -1,16 +1,10 @@
 import { Search, SlidersHorizontal, Star } from "lucide-react";
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ThemeContext } from "../Context/ThemeContext.tsx";
-import { useContext } from "react";
-import { useTheme } from "../Context/ThemeContext.tsx"; 
-
-
 
 const MovieList = () => {
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search");
-  const themeContext = useContext(ThemeContext);
   const Movies = [
     {
       id: 1,
@@ -58,7 +52,6 @@ const MovieList = () => {
       genre: ["Crime", "Drama", "History"],
     },
   ];
-  const { isDarkMode } = useTheme(); 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
@@ -80,9 +73,6 @@ const MovieList = () => {
                   alt={movie.title}
                   className="w-full h-full object-cover"
                 />
-                <div className={isDarkMode ? "bg-black text-white" : "bg-white text-black"}>
-      {/* Your movie list code here */}
-    </div>
                 <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1">
                   <Star className="w-4 h-4 text-yellow-500 fill-current" />
                   <span className="text-yellow-500 font-medium">

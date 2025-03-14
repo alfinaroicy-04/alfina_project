@@ -248,7 +248,7 @@ const Actordetails = () => {
                 >
                   <Award className="w-5 h-5 text-yellow-500" />
                   <div>
-                    <span className="font-semibold">{award.name}</span>
+                  <span className="font-semibold">{award?.name || "No Award"}</span>
                     <span className="mx-2">|</span>
                     <span>{award.year}</span>
                     <p className="text-sm text-gray-400">
